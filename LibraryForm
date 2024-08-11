@@ -1,0 +1,51 @@
+import React, { useState } from 'react';
+
+const LibraryForm = ({ onSubmit }) => {
+  const [library, setLibrary] = useState({
+    name: '',
+    address: '',
+    phone: '',
+  });
+
+  const handleChange = (e) => {
+    setLibrary({ ...library, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    onSubmit(library);
+    setLibrary({ name: '', address: '', phone: '' });
+  };
+
+  return (
+    <form onSubmit={handleSubmit}>
+      <input
+        type="text"
+        name="name"
+        value={library.name}
+        onChange={handleChange}
+        placeholder="Library Name"
+        required
+      />
+      <input
+        type="text"
+        name="address"
+        value={library.address}
+        onChange={handleChange}
+        placeholder="Library Address"
+        required
+      />
+      <input
+        type="tel"
+        name="phone"
+        value={library.phone}
+        onChange={handleChange}
+        placeholder="Phone Number"
+        required
+      />
+      <button type="submit">Add Library</button>
+    </form>
+  );
+};
+
+export default LibraryForm;

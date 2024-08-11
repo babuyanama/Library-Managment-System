@@ -1,0 +1,17 @@
+.BookItem {
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.BookItem h3 {
+    margin: 0 0 5px 0;
+}
+
+.BookItem p {
+    margin: 0 0 10px 0;
+}
+
+.BookItem button {
+    margin-right: 5px;
+}
